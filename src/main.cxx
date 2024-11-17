@@ -7,9 +7,11 @@ namespace PixelBattle
     const int WinHeight = 600;
 }
 
+using namespace PixelBattle;
+
 int main(void)
 {
-    InitWindow(PixelBattle::WinWidth, PixelBattle::WinHeight, "Pixel Battle");
+    InitWindow(WinWidth, WinHeight, "Pixel Battle");
 
     while (!WindowShouldClose())
     {
