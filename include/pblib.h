@@ -1,5 +1,5 @@
-#ifndef _LIB_H_
-#define _LIB_H_
+#ifndef _PBLIB_H_
+#define _PBLIB_H_
 
 #include <raylib.h>
 
