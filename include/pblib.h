@@ -17,22 +17,21 @@ namespace PixelBattle
     class Entity
     {
         public:
-        enum State
+        enum Action
         {
             IDLE = 0x0,
             WALK = 0x1,
             JUMP = 0x2,
-            DYING = 0x4,
+            DIE = 0x4,
             HURT = 0x8,
-            DEAD = 0x16,
-            ATACK = 0x32
+            ATACK = 0x16
         };
 
         PB_API Entity();
         PB_API Entity(float x, float y);
 
         Vector2 pos;
-        State state = IDLE;
+        Action action = IDLE;
     };
 }
 
