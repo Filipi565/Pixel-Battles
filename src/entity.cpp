@@ -3,6 +3,11 @@
 
 namespace PixelBattle
 {
+    PB_API void DrawStartMenu(void)
+    {
+        
+    }
+
     PB_API Entity::Entity()
     {
         pos = {0, 0};
