@@ -14,6 +14,10 @@ namespace PixelBattle
     extern const int WinHeight;
     extern const int WinWidth;
 
+    extern bool on_start_menu;
+
+    PB_API void DrawStartMenu(void);
+
     class Entity
     {
         public:
