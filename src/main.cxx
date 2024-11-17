@@ -3,8 +3,8 @@
 
 namespace PixelBattle
 {
-    int WinWidth = 800;
-    int WinHeight = 600;
+    const int WinWidth = 800;
+    const int WinHeight = 600;
 }
 
 int main(void)

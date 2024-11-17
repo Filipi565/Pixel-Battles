@@ -11,8 +11,8 @@
 
 namespace PixelBattle
 {
-    extern int WinHeight;
-    extern int WinWidth;
+    const int WinHeight;
+    const int WinWidth;
 
     class Entity
     {
