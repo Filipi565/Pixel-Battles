@@ -20,8 +20,8 @@ namespace PixelBattle
         enum State
         {
             IDLE = 0x0,
-            WALKING = 0x1,
-            JUMPING = 0x2,
+            WALK = 0x1,
+            JUMP = 0x2,
             DYING = 0x4,
             HURT = 0x8,
             DEAD = 0x16,
