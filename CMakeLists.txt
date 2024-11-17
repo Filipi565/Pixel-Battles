@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project("Pixel Battles")
+project("Pixel Battle")
 
 include_directories("C:\\Users\\Filipi\\Documents\\C-C++ Projects\\Include" ./include)
 link_directories("C:\\Users\\Filipi\\Documents\\C-C++ Projects\\Lib")
