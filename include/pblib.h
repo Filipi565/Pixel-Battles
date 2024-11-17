@@ -32,7 +32,7 @@ namespace PixelBattle
         PB_API Entity(float x, float y);
 
         Vector2 pos;
-        State state;
+        State state = IDLE;
     };
 }
 
