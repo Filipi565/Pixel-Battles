@@ -14,6 +14,10 @@ int main(void)
 
     ToggleFullscreen();
 
+    Entity player;
+    player.color = WHITE;
+    player.pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
@@ -26,6 +30,8 @@ int main(void)
             EndDrawing();
             continue;
         }
+
+        player.Draw();
 
         EndDrawing();
     }
