@@ -19,6 +19,8 @@ int main(void)
     {
         BeginDrawing();
 
+        ClearBackground(BLACK);
+
         if (on_start_menu)
         {
             DrawStartMenu();
