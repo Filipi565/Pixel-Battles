@@ -14,7 +14,7 @@ namespace PixelBattle
 
     void Entity::Draw(void)
     {
-        Vector2 size = {20, 40};
+        Vector2 size = {GetScreenHeight()/20.0f, GetScreenWidth()/20.0f};
         DrawRectangleV(pos, size, color);
     }
 }
