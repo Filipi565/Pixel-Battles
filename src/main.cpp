@@ -15,6 +15,7 @@ int main(void)
     ToggleFullscreen();
 
     Entity player;
+    player.speed = 20;
     player.color = WHITE;
     player.pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
 
