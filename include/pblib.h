@@ -5,9 +5,6 @@
 
 namespace PixelBattle
 {
-    extern const int WinHeight;
-    extern const int WinWidth;
-
     extern bool on_start_menu;
 
     void DrawStartMenu(void);
