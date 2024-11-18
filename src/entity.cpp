@@ -5,11 +5,8 @@ namespace PixelBattle
     Entity::Entity()
     {
         pos = {0, 0};
-    }
-
-    Entity::Entity(int x, int y)
-    {
-        pos = {(float)x, (float)y};
+        color = {0, 0, 0, 0};
+        speed = 0;
     }
 
     void Entity::Draw(void)

@@ -23,7 +23,6 @@ namespace PixelBattle
         };
 
         Entity();
-        Entity(int x, int y);
 
         virtual void Draw(void);
 
