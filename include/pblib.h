@@ -32,9 +32,13 @@ namespace PixelBattle
         };
 
         PB_API Entity();
-        PB_API Entity(float x, float y);
+        PB_API Entity(int x, int y);
+
+        PB_API void Draw(void);
 
         Vector2 pos;
+        Vector2 size;
+        Color color;
         Action action = IDLE;
     };
 }
