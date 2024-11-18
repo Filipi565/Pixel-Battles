@@ -30,8 +30,8 @@ namespace PixelBattle
         Vector2 pos;
         Color color;
         unsigned int speed;
-        unsigned char health;
         Action action = IDLE;
+        unsigned char health = 100;
     };
 }
 
