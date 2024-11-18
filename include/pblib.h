@@ -8,6 +8,7 @@ namespace PixelBattle
     extern bool on_start_menu;
 
     void DrawStartMenu(void);
+    int MemoryCopy(void *, unsigned long int, const void *);
 
     class Entity
     {
