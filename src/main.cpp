@@ -32,6 +32,23 @@ int main(void)
             continue;
         }
 
+        if (IsKeyDown(KEY_A))
+        {
+            player.pos.x -= player.speed;
+        }
+        else if (IsKeyDown(KEY_D))
+        {
+            player.pos.x += player.speed;
+        }
+        else if (IsKeyDown(KEY_W))
+        {
+            player.pos.y -= player.speed;
+        }
+        else if (IsKeyDown(KEY_S))
+        {
+            player.pos.y += player.speed;
+        }
+
         player.Draw();
 
         EndDrawing();
