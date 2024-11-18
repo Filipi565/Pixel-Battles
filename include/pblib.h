@@ -26,7 +26,7 @@ namespace PixelBattle
         Entity();
         Entity(int x, int y);
 
-        void Draw(void);
+        virtual void Draw(void);
 
         Vector2 pos;
         Color color;
