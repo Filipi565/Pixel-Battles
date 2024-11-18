@@ -11,6 +11,7 @@ using namespace PixelBattle;
 int main(void)
 {
     InitWindow(0, 0, "Pixel Battle");
+    ConfigWindowSize();
 
     ToggleFullscreen();
 
