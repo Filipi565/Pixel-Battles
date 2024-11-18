@@ -14,7 +14,7 @@ namespace PixelBattle
 
     void Entity::Draw(void)
     {
-        Vector2 size = {10, 20};
+        Vector2 size = {20, 40};
         DrawRectangleV(pos, size, color);
     }
 }
