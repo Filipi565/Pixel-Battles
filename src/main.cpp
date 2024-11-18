@@ -7,11 +7,13 @@ namespace PixelBattle
 
 using namespace PixelBattle;
 
-int main(void)
+int main(int, const char *argv[])
 {
     InitWindow(0, 0, "Pixel Battle");
 
     ToggleFullscreen();
+
+    LoadGlobalFont(argv[0]);
 
     Entity player;
     player.speed = 20;
