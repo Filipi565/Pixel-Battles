@@ -37,7 +37,6 @@ namespace PixelBattle
         PB_API void Draw(void);
 
         Vector2 pos;
-        Vector2 size;
         Color color;
         Action action = IDLE;
     };
