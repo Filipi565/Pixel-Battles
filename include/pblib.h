@@ -9,6 +9,7 @@ namespace PixelBattle
 
     void DrawStartMenu(void);
     int MemoryCopy(void *, unsigned long int, const void *);
+    int PathAbsolute(char *, unsigned long int, const char *);
 
     class Entity
     {
