@@ -18,7 +18,12 @@ int main(void)
     {
         BeginDrawing();
 
-        if (on_start_menu) {DrawStartMenu();}
+        if (on_start_menu)
+        {
+            DrawStartMenu();
+            EndDrawing();
+            continue;
+        }
 
         EndDrawing();
     }
