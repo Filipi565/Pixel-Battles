@@ -19,6 +19,8 @@ int main(void)
     player.color = WHITE;
     player.pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
 
+    SetTargetFPS(60);
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
