@@ -7,7 +7,6 @@ namespace PixelBattle
 {
     extern bool on_start_menu;
 
-    void ConfigWindowSize(void);
     void DrawStartMenu(void);
 
     class Entity
