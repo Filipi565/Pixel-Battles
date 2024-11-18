@@ -1,15 +1,20 @@
-#include "pbconfig.h"
 #include <pblib.h>
 
 namespace PixelBattle
 {
-    PB_API Entity::Entity()
+    Entity::Entity()
     {
         pos = {0, 0};
     }
 
-    PB_API Entity::Entity(float x, float y)
+    Entity::Entity(int x, int y)
     {
-        pos = {x, y};
+        pos = {(float)x, (float)y};
+    }
+
+    void Entity::Draw(void)
+    {
+        Vector2 size = {10, 20};
+        //DrawRectangleV(pos, size, color);
     }
 }

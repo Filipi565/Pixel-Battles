@@ -12,9 +12,8 @@ set(CMAKE_SHARED_LIBRARY_PREFIX "")
 
 file(GLOB_RECURSE SOURCE "src/*.cpp")
 
-add_library(libPixelBattle SHARED ${SOURCE})
 find_library(RAYLIB raylib gdi32 winmm)
 
-add_executable(PixelBattle src/main.cxx)
+add_executable(PixelBattle ${SOURCE})
 
-target_link_libraries(PixelBattle libPixelBattle raylib gdi32 winmm)
+target_link_libraries(PixelBattle raylib gdi32 winmm)

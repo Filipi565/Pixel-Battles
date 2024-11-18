@@ -3,12 +3,6 @@
 
 #include <raylib.h>
 
-#ifdef PB_LIB_EXPORT
-#define PB_API __declspec(dllexport)
-#else
-#define PB_API __declspec(dllimport)
-#endif
-
 namespace PixelBattle
 {
     extern const int WinHeight;
@@ -16,7 +10,7 @@ namespace PixelBattle
 
     extern bool on_start_menu;
 
-    PB_API void DrawStartMenu(void);
+    void DrawStartMenu(void);
 
     class Entity
     {
@@ -31,10 +25,10 @@ namespace PixelBattle
             ATACK = 0x16
         };
 
-        PB_API Entity();
-        PB_API Entity(int x, int y);
+        Entity();
+        Entity(int x, int y);
 
-        PB_API void Draw(void);
+        void Draw(void);
 
         Vector2 pos;
         Color color;

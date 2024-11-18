@@ -2,8 +2,8 @@
 
 namespace PixelBattle
 {
-    PB_API void DrawStartMenu(void)
+    void DrawStartMenu(void)
     {
-        
+
     }
 }
