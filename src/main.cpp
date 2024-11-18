@@ -14,6 +14,8 @@ int main(void)
 {
     InitWindow(WinWidth, WinHeight, "Pixel Battle");
 
+    ToggleFullscreen();
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
