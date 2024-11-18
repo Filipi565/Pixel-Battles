@@ -21,7 +21,8 @@ else()
 endif(WIN32)
 
 
-find_library(RAYLIB raylib cwalk ${LIBRARIES} REQUIRED)
+find_library(REQUIRED_LIBS raylib cwalk REQUIRED)
+find_library(OPTIONAL_LIBS ${LIBRARIES})
 
 add_executable(PixelBattle ${SOURCE})
 
