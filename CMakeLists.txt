@@ -10,8 +10,19 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 
 file(GLOB_RECURSE SOURCE "src/*.cpp")
 
-find_library(RAYLIB raylib gdi32 winmm)
+if (WIN32)
+    set(LIBRARIES gdi32 winmm)
+elseif(UNIX)
+    set(LIBRARIES GL m pthread dl rt X11)
+elseif(APPLE)
+    set(LIBRARIES "-framework IOKit" "-framework Cocoa" "-framework OpenGL")
+else()
+    message(FATAL_ERROR "Platform not supported")
+endif(WIN32)
+
+
+find_library(RAYLIB raylib ${LIBRARIES})
 
 add_executable(PixelBattle ${SOURCE})
 
-target_link_libraries(PixelBattle raylib gdi32 winmm)
+target_link_libraries(PixelBattle raylib ${LIBRARIES})
