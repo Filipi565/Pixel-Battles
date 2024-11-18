@@ -20,9 +20,7 @@ else()
     message(FATAL_ERROR "Platform not supported")
 endif(WIN32)
 
-
-find_library(REQUIRED_LIBS raylib cwalk REQUIRED)
-find_library(OPTIONAL_LIBS ${LIBRARIES})
+find_library(RAYLIB raylib cwalk ${LIBRARIES})
 
 add_executable(PixelBattle ${SOURCE})
 
