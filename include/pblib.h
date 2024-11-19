@@ -54,6 +54,9 @@ namespace PixelBattle
         protected:
         unsigned long int _m_count;
         function_t *_m_functions;
+
+        private:
+        void _Allocate(unsigned long int);
     };
 }
 
