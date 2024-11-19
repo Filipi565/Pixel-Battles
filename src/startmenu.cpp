@@ -6,55 +6,59 @@ using std::string;
 
 namespace PixelBattle
 {
-    static Texture2D *__background = nullptr;
-    static bool __sound_played = false;
-    static Sound *__sound = nullptr;
-    static char __frames = 0;
+    namespace StartMenu
+    {
+        static Texture2D *background = nullptr;
+        static bool sound_played = false;
+        static Sound *sound = nullptr;
+        static char frames = 0;
+    }
 
     void LoadStartMenu(const char *assets)
     {
+        using namespace StartMenu;
         ClearBackground(BLACK);
 
-        if (__background == nullptr)
+        if (background == nullptr)
         {
             string result = assets;
             result += "/backgrounds/StartMenu.png";
 
             Image image = LoadImage(result.data());
 
-            __background = new Texture2D();
-            (*__background) = LoadTextureFromImage(image);
+            background = new Texture2D();
+            (*background) = LoadTextureFromImage(image);
 
             UnloadImage(image);
         }
 
-        if (__sound == nullptr)
+        if (sound == nullptr)
         {
             string result = assets;
             result += "/sounds/StartMenu.mp3";
 
-            __sound = new Sound();
-            (*__sound) = LoadSound(result.data());
+            sound = new Sound();
+            (*sound) = LoadSound(result.data());
         }
 
         Rectangle source, dest;
 
-        source = {0.0f, 0.0f, (float)__background->width, (float)__background->height};
+        source = {0.0f, 0.0f, (float)background->width, (float)background->height};
         dest = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
 
-        DrawTexturePro(*__background, source, dest, {0, 0}, 0, WHITE);
+        DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
 
-        if (!__sound_played)
+        if (!sound_played)
         {
-            if (__frames >= 60)
+            if (frames >= 60)
             {
-                __sound_played = true;
+                sound_played = true;
 
-                PlaySound(*__sound);
+                PlaySound(*sound);
             }
             else
             {
-                __frames++;
+                frames++;
             }
         }
     }
