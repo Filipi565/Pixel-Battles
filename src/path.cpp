@@ -1,7 +1,13 @@
 #include <cwalk.h>
 #include <pblib.h>
 
-#define IS_SEP(o) ((o) == '/' || (o) == '\\')
+#if defined(_WIN32)
+#define SEP '\\'
+#else
+#define SEP '/'
+#endif
+
+#define IS_SEP(o) ((o) == '/' || (o) == SEP)
 
 namespace PixelBattle
 {
