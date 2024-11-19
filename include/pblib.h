@@ -43,7 +43,7 @@ namespace PixelBattle
         typedef void (*function_t)(void);
 
         Button();
-        virtual void Draw(void);
+        virtual void Load(void);
         virtual void OnClick(function_t);
 
         Texture2D texture;
