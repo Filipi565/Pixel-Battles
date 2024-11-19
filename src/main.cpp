@@ -24,6 +24,8 @@ int main(int, const char *argv[])
 
     SetTargetFPS(60);
 
+    InitAudioDevice();
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
@@ -34,6 +36,8 @@ int main(int, const char *argv[])
             EndDrawing();
             continue;
         }
+
+        ClearBackground(BLACK);
 
         if (IsKeyDown(KEY_A))
         {
@@ -48,6 +52,8 @@ int main(int, const char *argv[])
 
         EndDrawing();
     }
+
+    CloseAudioDevice();
 
     CloseWindow();
 

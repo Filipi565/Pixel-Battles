@@ -7,6 +7,7 @@ using std::string;
 namespace PixelBattle
 {
     static Texture2D *__background = nullptr;
+    static bool __sound_played = false;
     static Sound *__sound = nullptr;
 
     void LoadStartMenu(const char *assets)
@@ -29,7 +30,8 @@ namespace PixelBattle
             string result = assets;
             result += "/sounds/StartMenu.mp3";
 
-            LoadSound(result.data());
+            __sound = new Sound();
+            (*__sound) = LoadSound(result.data());
         }
 
         Rectangle source, dest;
@@ -38,5 +40,12 @@ namespace PixelBattle
         dest = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
 
         DrawTexturePro(*__background, source, dest, {0, 0}, 0, WHITE);
+
+        if (!__sound_played)
+        {
+            __sound_played = true;
+
+            PlaySound(*__sound);
+        }
     }
 }
