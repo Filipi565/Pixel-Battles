@@ -6,10 +6,8 @@
 namespace PixelBattle
 {
     extern bool on_start_menu;
-    extern Font font;
 
     void DrawStartMenu(void);
-    void LoadGlobalFont(const char *);
     int MemoryCopy(void *, unsigned long int, const void *);
     int PathAbsolute(char *, unsigned long int, const char *);
 

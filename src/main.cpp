@@ -13,8 +13,6 @@ int main(int, const char *argv[])
 
     ToggleFullscreen();
 
-    LoadGlobalFont(argv[0]);
-
     Entity player;
     player.speed = 20;
     player.color = WHITE;
