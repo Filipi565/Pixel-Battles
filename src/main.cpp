@@ -14,7 +14,7 @@ int main(int, const char *argv[])
     ToggleFullscreen();
 
     Entity player;
-    player.speed = 20;
+    player.speed = 10;
     player.color = WHITE;
     player.pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
 
