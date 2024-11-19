@@ -50,7 +50,7 @@ namespace PixelBattle
 
         if (!sound_played)
         {
-            if (frames >= 60)
+            if (frames >= 120)
             {
                 sound_played = true;
 
