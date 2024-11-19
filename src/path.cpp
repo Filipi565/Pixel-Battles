@@ -29,4 +29,23 @@ namespace PixelBattle
         cwk_path_get_absolute(base, path, buff, buffsize);
         return 0;
     }
+
+    char *GetAssetsPath()
+    {
+        const char *paths[] = {
+            executable,
+            "..",
+            "Assets",
+            nullptr
+        };
+
+        char temp[4096];
+
+        auto size = cwk_path_join_multiple(paths, temp, 4096);
+
+        char *result = new char[size+1];
+        TextCopy(result, temp);
+
+        return result;
+    }
 }
