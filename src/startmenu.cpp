@@ -12,6 +12,8 @@ namespace PixelBattle
 
     void LoadStartMenu(const char *assets)
     {
+        ClearBackground(BLACK);
+
         if (__background == nullptr)
         {
             string result = assets;
