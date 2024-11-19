@@ -28,6 +28,11 @@ int main(int, const char *argv[])
 
     while (!WindowShouldClose())
     {
+        if (!IsCursorOnScreen() && GetTime() >= 2)
+        {
+            MinimizeWindow();
+        }
+
         BeginDrawing();
 
         if (on_start_menu)
