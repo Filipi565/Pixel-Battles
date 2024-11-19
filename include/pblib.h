@@ -5,6 +5,7 @@
 
 namespace PixelBattle
 {
+    extern const char *executable;
     extern bool on_start_menu;
 
     void DrawStartMenu(void);

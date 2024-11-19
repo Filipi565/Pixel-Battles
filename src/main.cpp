@@ -2,6 +2,7 @@
 
 namespace PixelBattle
 {
+    const char *executable = nullptr;
     bool on_start_menu = true;
 }
 
@@ -10,6 +11,8 @@ using namespace PixelBattle;
 int main(int, const char *argv[])
 {
     InitWindow(0, 0, "Pixel Battle");
+
+    executable = argv[0];
 
     ToggleFullscreen();
 
