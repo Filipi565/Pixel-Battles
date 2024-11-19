@@ -36,6 +36,25 @@ namespace PixelBattle
         Action action = IDLE;
         unsigned char health = 100;
     };
+
+    class Button
+    {
+        public:
+        typedef void (*function_t)(void);
+
+        Button();
+        virtual void Draw(void);
+        virtual void OnClick(function_t);
+
+        Texture2D texture;
+        Vector2 size;
+        bool visible;
+        Vector2 pos;
+
+        protected:
+        unsigned long int _m_count;
+        function_t *_m_functions;
+    };
 }
 
 #endif
