@@ -7,6 +7,8 @@ using std::string;
 namespace PixelBattle
 {
     static Texture2D *__background = nullptr;
+    static Sound *__sound = nullptr;
+
     void LoadStartMenu(const char *assets)
     {
         if (__background == nullptr)
@@ -20,6 +22,14 @@ namespace PixelBattle
             (*__background) = LoadTextureFromImage(image);
 
             UnloadImage(image);
+        }
+
+        if (__sound == nullptr)
+        {
+            string result = assets;
+            result += "/sounds/StartMenu.mp3";
+
+            LoadSound(result.data());
         }
 
         Rectangle source, dest;
