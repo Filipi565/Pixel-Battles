@@ -9,6 +9,7 @@ namespace PixelBattle
     static Texture2D *__background = nullptr;
     static bool __sound_played = false;
     static Sound *__sound = nullptr;
+    static char __frames = 0;
 
     void LoadStartMenu(const char *assets)
     {
@@ -45,9 +46,16 @@ namespace PixelBattle
 
         if (!__sound_played)
         {
-            __sound_played = true;
+            if (__frames >= 60)
+            {
+                __sound_played = true;
 
-            PlaySound(*__sound);
+                PlaySound(*__sound);
+            }
+            else
+            {
+                __frames++;
+            }
         }
     }
 }
