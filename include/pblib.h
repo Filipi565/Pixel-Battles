@@ -9,7 +9,7 @@ namespace PixelBattle
     extern bool on_start_menu;
 
     char *GetAssetsPath(void);
-    void DrawStartMenu(const char *);
+    void LoadStartMenu(const char *);
     int MemoryCopy(void *, unsigned long int, const void *);
     int PathAbsolute(char *, unsigned long int, const char *);
 

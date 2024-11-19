@@ -30,7 +30,7 @@ int main(int, const char *argv[])
 
         if (on_start_menu)
         {
-            DrawStartMenu(assets);
+            LoadStartMenu(assets);
             EndDrawing();
             continue;
         }

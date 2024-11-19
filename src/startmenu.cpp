@@ -7,7 +7,7 @@ using std::string;
 namespace PixelBattle
 {
     static Texture2D *__background = nullptr;
-    void DrawStartMenu(const char *assets)
+    void LoadStartMenu(const char *assets)
     {
         if (__background == nullptr)
         {
