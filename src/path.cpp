@@ -20,6 +20,7 @@ namespace PixelBattle
             base = GetWorkingDirectory();
         }
 
-        return cwk_path_get_absolute(base, path, buff, buffsize);
+        cwk_path_get_absolute(base, path, buff, buffsize);
+        return 0;
     }
 }
