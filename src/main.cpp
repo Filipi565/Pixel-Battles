@@ -28,11 +28,9 @@ int main(int, const char *argv[])
     {
         BeginDrawing();
 
-        ClearBackground(BLACK);
-
         if (on_start_menu)
         {
-            DrawStartMenu();
+            DrawStartMenu(assets);
             EndDrawing();
             continue;
         }
