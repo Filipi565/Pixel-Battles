@@ -13,7 +13,7 @@ int main(int, const char *argv[])
     InitWindow(0, 0, "Pixel Battle");
 
     executable = argv[0];
-    InitAssetsPath();
+    char *assets = GetAssetsPath();
 
     ToggleFullscreen();
 

@@ -6,11 +6,10 @@
 namespace PixelBattle
 {
     extern const char *executable;
-    extern const char *assets;
     extern bool on_start_menu;
 
     void DrawStartMenu(void);
-    void InitAssetsPath(void);
+    char *GetAssetsPath(void);
     int MemoryCopy(void *, unsigned long int, const void *);
     int PathAbsolute(char *, unsigned long int, const char *);
 
