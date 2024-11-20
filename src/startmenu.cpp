@@ -36,7 +36,12 @@ namespace PixelBattle
 
         static void SettingsButtonCallback(void)
         {
-            fprintf(stdout, "Testing\n");
+            fprintf(stdout, "Settings\n");
+        }
+
+        static void ExtrasButtonCallback(void)
+        {
+            fprintf(stdout, "Extras\n");
         }
 
         static void LoadBackground(const char *assets)
