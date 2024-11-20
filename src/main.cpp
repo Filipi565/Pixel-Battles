@@ -58,8 +58,19 @@ int main(int, const char *argv[])
         EndDrawing();
     }
 
-    CloseAudioDevice();
+    if (StartMenu::sound != nullptr)
+    {
+        UnloadSound(*StartMenu::sound);
+        delete StartMenu::sound;
+    }
 
+    if (StartMenu::background != nullptr)
+    {
+        UnloadTexture(*StartMenu::background);
+        delete StartMenu::background;
+    }
+
+    CloseAudioDevice();
     CloseWindow();
 
     return 0;
