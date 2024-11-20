@@ -25,7 +25,7 @@ namespace PixelBattle
         rec = {pos.x, pos.y, size.x, size.y};
         bool in_colision = CheckCollisionPointRec(GetMousePosition(), rec);
 
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && in_colision)
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && in_colision && visible)
         {
             for (unsigned long int i = 0; i < _m_count; i++)
             {
