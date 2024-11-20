@@ -93,6 +93,13 @@ namespace PixelBattle
             (*settings_button) = play_button->Clone();
             settings_button->OnClick = &SettingsButtonCallback;
             settings_button->pos.y += (settings_button->size.y + 10);
+
+            string result = assets;
+            result += "/buttons/Settings.png";
+
+            Image image = LoadImage(result.data());
+            (*settings_button->texture) = LoadTextureFromImage(image);
+            UnloadImage(image);
         }
 
         Rectangle source, dest;
