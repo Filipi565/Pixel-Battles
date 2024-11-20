@@ -4,6 +4,8 @@ namespace PixelBattle
 {
     const char *executable = nullptr;
     bool on_start_menu = true;
+
+    void Clean(void);
 }
 
 using namespace PixelBattle;
@@ -60,22 +62,7 @@ int main(int argc, const char *argv[])
 
     delete[] assets;
 
-    if (StartMenu::sound != nullptr)
-    {
-        UnloadSound(*StartMenu::sound);
-        delete StartMenu::sound;
-    }
-
-    if (StartMenu::background != nullptr)
-    {
-        UnloadTexture(*StartMenu::background);
-        delete StartMenu::background;
-    }
-
-    if (StartMenu::play_button != nullptr)
-    {
-        delete StartMenu::play_button;
-    }
+    Clean();
 
     CloseAudioDevice();
     CloseWindow();
