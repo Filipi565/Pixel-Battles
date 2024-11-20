@@ -91,8 +91,8 @@ namespace PixelBattle
         {
             settings_button = new Button();
             (*settings_button) = play_button->Clone();
+            settings_button->OnClick = &SettingsButtonCallback;
             settings_button->pos.y += (settings_button->size.y + 10);
-            settings_button->OnClick = SettingsButtonCallback;
         }
 
         Rectangle source, dest;
