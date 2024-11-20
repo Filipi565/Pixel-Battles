@@ -15,7 +15,7 @@ namespace PixelBattle
 
         static bool sound_played = false;
         static char frames = 0;
-        
+
         static void PlayButtonCallback(void)
         {
             on_start_menu = false;
@@ -70,7 +70,7 @@ namespace PixelBattle
             Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
             play_button->pos = {
                 (GetScreenWidth()-size.x)/2,
-                (GetScreenHeight()-size.y)/2 - size.y
+                (GetScreenHeight()-size.y)/2 - size.y - 10
             };
             play_button->size = size;
 
