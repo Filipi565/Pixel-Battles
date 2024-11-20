@@ -29,7 +29,7 @@ namespace PixelBattle
 
         Entity();
 
-        virtual void Draw(void);
+        virtual void Load(void);
 
         Vector2 pos;
         Color color;

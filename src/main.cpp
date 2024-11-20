@@ -53,7 +53,7 @@ int main(int, const char *argv[])
             player.pos.x += player.speed;
         }
 
-        player.Draw();
+        player.Load();
 
         EndDrawing();
     }
