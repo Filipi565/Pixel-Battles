@@ -71,6 +71,7 @@ namespace PixelBattle
         dest = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
 
         DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
+        play_button->Load();
 
         if (!sound_played)
         {
