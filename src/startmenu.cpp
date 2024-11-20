@@ -16,6 +16,7 @@ namespace PixelBattle
         static void PlayButtonCallback(void)
         {
             on_start_menu = false;
+            sound_played = false;
 
             UnloadTexture(*background);
             UnloadSound(*sound);
