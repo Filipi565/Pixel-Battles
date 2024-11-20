@@ -20,6 +20,23 @@ namespace PixelBattle
         Color color;
     };
 
+    class TextureObject: public Object
+    {
+        public:
+        virtual ~TextureObject()
+        {
+            if (texture != nullptr)
+            {
+                UnloadTexture(*texture);
+                delete texture;
+            }
+
+            texture = nullptr;
+        }
+
+        Texture2D *texture;
+    };
+
     class Entity: public Object
     {
         public:
@@ -42,7 +59,7 @@ namespace PixelBattle
         unsigned char health = 100;
     };
 
-    class Button: public Object
+    class Button: public TextureObject
     {
         public:
         Button();
@@ -50,7 +67,6 @@ namespace PixelBattle
         virtual void Load(void);
 
         void (*OnClick)(void);
-        Texture2D *texture;
         bool visible;
 
         protected:

@@ -14,17 +14,6 @@ namespace PixelBattle
         OnClick = &_M_NoPointer;
     }
 
-    Button::~Button()
-    {
-        if (texture != nullptr)
-        {
-            UnloadTexture(*texture);
-            delete texture;
-        }
-
-        texture = nullptr;
-    }
-
     void Button::Load(void)
     {
         Rectangle rec;
