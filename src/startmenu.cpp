@@ -44,7 +44,7 @@ namespace PixelBattle
             fprintf(stdout, "Extras\n");
         }
 
-        static void LoadBackground(const char *assets)
+        static void CreateBackground(const char *assets)
         {
             string result = assets;
             result += "/backgrounds/StartMenu.png";
@@ -57,7 +57,7 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        static void LoadBackgroundSound(const char *assets)
+        static void CreateBackgroundSound(const char *assets)
         {
             string result = assets;
             result += "/sounds/StartMenu.mp3";
@@ -66,7 +66,7 @@ namespace PixelBattle
             (*sound) = LoadSound(result.data());
         }
 
-        static void LoadPlayButton(const char *assets)
+        static void CreatePlayButton(const char *assets)
         {
             play_button = new Button();
             play_button->color = WHITE;
@@ -87,7 +87,7 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        static void LoadSettingsButton(const char *assets)
+        static void CreateSettingsButton(const char *assets)
         {
             settings_button = new Button();
             settings_button->color = WHITE;
@@ -108,7 +108,7 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        static void LoadExtrasButton(const char *assets)
+        static void CreateExtrasButton(const char *assets)
         {
             extras_button = new Button();
             extras_button->color = WHITE;
@@ -137,27 +137,27 @@ namespace PixelBattle
 
         if (background == nullptr)
         {
-            LoadBackground(assets);
+            CreateBackground(assets);
         }
 
         if (sound == nullptr)
         {
-            LoadBackgroundSound(assets);
+            CreateBackgroundSound(assets);
         }
 
         if (play_button == nullptr)
         {
-            LoadPlayButton(assets);
+            CreatePlayButton(assets);
         }
 
         if (settings_button == nullptr)
         {
-            LoadSettingsButton(assets);
+            CreateSettingsButton(assets);
         }
 
         if (extras_button == nullptr)
         {
-            LoadExtrasButton(assets);
+            CreateExtrasButton(assets);
         }
 
         Rectangle source, dest;
