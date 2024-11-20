@@ -16,7 +16,7 @@ namespace PixelBattle
 
         static void PlayButtonCallback(void)
         {
-            fprintf(stdout, "Testing");
+            fprintf(stdout, "Testing\n");
         }
     }
 
