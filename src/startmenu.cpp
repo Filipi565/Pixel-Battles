@@ -9,8 +9,8 @@ namespace PixelBattle
     namespace StartMenu
     {
         static bool sound_played = false;
-        Button *play_button = nullptr;
         Texture2D *background = nullptr;
+        Button *play_button = nullptr;
         static char frames = 0;
         Sound *sound = nullptr;
     }
