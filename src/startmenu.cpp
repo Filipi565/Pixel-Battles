@@ -136,14 +136,8 @@ namespace PixelBattle
 
         DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
 
-        if (play_button)
-        {
-            play_button->Load();
-        }
-        if (settings_button)
-        {
-            settings_button->Load();
-        }
+        play_button->Load();
+        settings_button->Load();
 
         if (!sound_played)
         {
