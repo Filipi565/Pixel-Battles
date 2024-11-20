@@ -16,8 +16,13 @@ namespace PixelBattle
 
     Button::~Button()
     {
-        UnloadTexture(*texture);
-        delete texture;
+        if (texture != nullptr)
+        {
+            UnloadTexture(*texture);
+            delete texture;
+        }
+
+        texture = nullptr;
     }
 
     void Button::Load(void)
