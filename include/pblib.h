@@ -13,7 +13,14 @@ namespace PixelBattle
     void LoadStartMenu(const char *);
     int MemoryCopy(void *, unsigned long int, const void *);
 
-    class Entity
+    struct Object
+    {
+        Vector2 size;
+        Vector2 pos;
+        Color color;
+    };
+
+    class Entity: public Object
     {
         public:
         enum Action
@@ -30,14 +37,12 @@ namespace PixelBattle
 
         virtual void Load(void);
 
-        Vector2 pos;
-        Color color;
         unsigned int speed;
         Action action = IDLE;
         unsigned char health = 100;
     };
 
-    class Button
+    class Button: public Object
     {
         public:
         Button();
@@ -48,8 +53,6 @@ namespace PixelBattle
         Texture2D *texture;
         Vector2 size;
         bool visible;
-        Color color;
-        Vector2 pos;
 
         protected:
         static void _M_NoPointer(void) {}
