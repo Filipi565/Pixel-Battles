@@ -70,6 +70,11 @@ int main(int, const char *argv[])
         delete StartMenu::background;
     }
 
+    if (StartMenu::play_button != nullptr)
+    {
+        delete StartMenu::play_button;
+    }
+
     CloseAudioDevice();
     CloseWindow();
 

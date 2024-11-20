@@ -5,11 +5,6 @@
 
 namespace PixelBattle
 {
-    namespace StartMenu
-    {
-        extern Texture2D *background;
-        extern Sound *sound;
-    }
     
     extern const char *executable;
     extern bool on_start_menu;
@@ -66,6 +61,12 @@ namespace PixelBattle
         private:
         void _Allocate(unsigned long int);
     };
+    namespace StartMenu
+    {
+        extern Texture2D *background;
+        extern Button *play_button;
+        extern Sound *sound;
+    }
 }
 
 #endif
