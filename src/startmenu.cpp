@@ -54,8 +54,12 @@ namespace PixelBattle
             play_button->visible = true;
             play_button->texture = new Texture2D();
             play_button->OnClick(PlayButtonCallback);
-            play_button->pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
-            play_button->size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            play_button->pos = {
+                (GetScreenWidth()-size.x)/2,
+                (GetScreenHeight()-size.y)/2
+            };
+            play_button->size = size;
 
             string result = assets;
             result += "/buttons/Play.png";
