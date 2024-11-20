@@ -51,7 +51,6 @@ namespace PixelBattle
 
         void (*OnClick)(void);
         Texture2D *texture;
-        Vector2 size;
         bool visible;
 
         protected:
