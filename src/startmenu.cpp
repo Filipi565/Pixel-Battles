@@ -114,10 +114,13 @@ namespace PixelBattle
         dest = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
 
         DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
-        
-        if (on_start_menu)
+
+        if (play_button)
         {
             play_button->Load();
+        }
+        if (settings_button)
+        {
             settings_button->Load();
         }
 
