@@ -46,7 +46,7 @@ namespace PixelBattle
         virtual void Load(void);
         virtual void OnClick(function_t);
 
-        Texture2D texture;
+        Texture2D *texture;
         Vector2 size;
         bool visible;
         Vector2 pos;
