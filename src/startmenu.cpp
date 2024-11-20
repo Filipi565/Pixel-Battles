@@ -24,11 +24,9 @@ namespace PixelBattle
             UnloadTexture(*background);
             UnloadSound(*sound);
 
-            delete play_button;
             delete background;
             delete sound;
 
-            play_button = nullptr;
             background = nullptr;
             sound = nullptr;
         }
