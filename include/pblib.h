@@ -61,6 +61,7 @@ namespace PixelBattle
         private:
         void _Allocate(unsigned long int);
     };
+    
     namespace StartMenu
     {
         extern Texture2D *background;
