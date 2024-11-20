@@ -19,6 +19,7 @@ namespace PixelBattle
     Button::~Button()
     {
         MemFree(_m_functions);
+        delete texture;
     }
 
     void Button::Load(void)
