@@ -41,14 +41,12 @@ namespace PixelBattle
     class Button
     {
         public:
-        typedef void (*function_t)(void);
-
         Button();
         virtual ~Button();
         virtual void Load(void);
-        virtual void OnClick(function_t);
         virtual Button Clone(bool copy_funcs = false);
 
+        void (*OnClick)(void);
         Texture2D *texture;
         Vector2 size;
         bool visible;
@@ -56,11 +54,7 @@ namespace PixelBattle
         Vector2 pos;
 
         protected:
-        unsigned long int _m_count;
-        function_t *_m_functions;
-
-        private:
-        void _Allocate(unsigned long int);
+        static void _M_NoPointer(void) {}
     };
     
     namespace StartMenu

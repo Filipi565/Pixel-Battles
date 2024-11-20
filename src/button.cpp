@@ -7,20 +7,16 @@ namespace PixelBattle
     Button::Button()
     {
         texture = new Texture2D();
-        _m_functions = nullptr;
         visible = false;
         size = {0, 0};
         pos = {0, 0};
-        _m_count = 0;
 
-        _Allocate(0);
+        OnClick = _M_NoPointer;
     }
 
     Button::~Button()
     {
         UnloadTexture(*texture);
-        
-        MemFree(_m_functions);
         delete texture;
     }
 
@@ -32,11 +28,7 @@ namespace PixelBattle
 
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && in_colision && visible)
         {
-            for (unsigned long int i = 0; i < _m_count; i++)
-            {
-                function_t func = _m_functions[i];
-                func();
-            }
+            this->OnClick();
         }
 
         if (visible)
@@ -58,38 +50,9 @@ namespace PixelBattle
 
         if (copy_funcs)
         {
-            for (unsigned long int i = 0; i < _m_count; i++)
-            {
-                result.OnClick(_m_functions[i]);
-            }
+            result.OnClick = this->OnClick;
         }
 
         return result;
-    }
-
-    void Button::OnClick(function_t func)
-    {
-        _m_count++;
-        _Allocate(_m_count);
-
-        _m_functions[_m_count-1] = func;
-    }
-
-    void Button::_Allocate(unsigned long int s)
-    {
-        if (_m_functions == nullptr)
-        {
-            _m_functions = (function_t *)MemAlloc(s*sizeof(function_t *));
-        }
-        else
-        {
-            _m_functions = (function_t *)MemRealloc(_m_functions, s);
-        }
-
-        if (_m_functions == nullptr)
-        {
-            fprintf(stderr, "Error while allocating memory\n");
-            std::exit(1);
-        }
     }
 }
