@@ -52,7 +52,6 @@ namespace PixelBattle
             play_button = new Button();
             play_button->color = WHITE;
             play_button->visible = true;
-            play_button->texture = new Texture2D();
             play_button->OnClick(PlayButtonCallback);
             Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
             play_button->pos = {

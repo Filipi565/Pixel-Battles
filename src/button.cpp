@@ -6,8 +6,8 @@ namespace PixelBattle
 {
     Button::Button()
     {
+        texture = new Texture2D();
         _m_functions = nullptr;
-        texture = nullptr;
         visible = false;
         size = {0, 0};
         pos = {0, 0};
