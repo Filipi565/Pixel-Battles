@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <pblib.h>
 
 namespace PixelBattle
@@ -52,6 +54,12 @@ namespace PixelBattle
         else
         {
             _m_functions = (function_t *)MemRealloc(_m_functions, s);
+        }
+
+        if (_m_functions == nullptr)
+        {
+            fprintf(stderr, "Error while allocating memory\n");
+            std::exit(1);
         }
     }
 }
