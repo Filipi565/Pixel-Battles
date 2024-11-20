@@ -56,6 +56,7 @@ namespace PixelBattle
         Texture2D *texture;
         Vector2 size;
         bool visible;
+        Color color;
         Vector2 pos;
 
         protected:
