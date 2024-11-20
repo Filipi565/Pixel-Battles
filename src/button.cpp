@@ -39,9 +39,8 @@ namespace PixelBattle
         if (visible)
         {
             Rectangle source = {pos.x, pos.y, (float)texture->width, (float)texture->height};
-            Rectangle dest = {pos.x, pos.y, size.x, size.y};
 
-            DrawTexturePro(*texture, source, dest, {0, 0}, 0, WHITE);
+            DrawTexturePro(*texture, source, rec, {0, 0}, 0, WHITE);
         }
     }
 
