@@ -92,6 +92,7 @@ namespace PixelBattle
             if (frames >= 120)
             {
                 sound_played = true;
+                frames = 0;
 
                 PlaySound(*sound);
             }
