@@ -13,6 +13,11 @@ namespace PixelBattle
         Button *play_button = nullptr;
         static char frames = 0;
         Sound *sound = nullptr;
+
+        static void PlayButtonCallback(void)
+        {
+            fprintf(stdout, "Testing");
+        }
     }
 
     void LoadStartMenu(const char *assets)
@@ -40,6 +45,24 @@ namespace PixelBattle
 
             sound = new Sound();
             (*sound) = LoadSound(result.data());
+        }
+
+        if (play_button == nullptr)
+        {
+            play_button = new Button();
+            play_button->color = WHITE;
+            play_button->visible = true;
+            play_button->texture = new Texture2D();
+            play_button->OnClick(PlayButtonCallback);
+            play_button->pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
+            play_button->size = {GetScreenWidth()/20.0f, GetScreenHeight()/20.0f};
+
+            string result = assets;
+            result += "/buttons/Play.png";
+
+            Image image = LoadImage(result.data());
+            (*play_button->texture) = LoadTextureFromImage(image);
+            UnloadImage(image);
         }
 
         Rectangle source, dest;
