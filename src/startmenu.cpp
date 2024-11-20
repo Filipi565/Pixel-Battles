@@ -38,14 +38,8 @@ namespace PixelBattle
         {
             fprintf(stdout, "Testing\n");
         }
-    }
 
-    void LoadStartMenu(const char *assets)
-    {
-        using namespace StartMenu;
-        ClearBackground(BLACK);
-
-        if (background == nullptr)
+        static void LoadBackground(const char *assets)
         {
             string result = assets;
             result += "/backgrounds/StartMenu.png";
@@ -58,7 +52,7 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        if (sound == nullptr)
+        static void LoadBackgroundSound(const char *assets)
         {
             string result = assets;
             result += "/sounds/StartMenu.mp3";
@@ -67,7 +61,7 @@ namespace PixelBattle
             (*sound) = LoadSound(result.data());
         }
 
-        if (play_button == nullptr)
+        static void LoadPlayButton(const char *assets)
         {
             play_button = new Button();
             play_button->color = WHITE;
@@ -88,7 +82,7 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        if (settings_button == nullptr)
+        static void LoadSettingsButton(const char *assets)
         {
             settings_button = new Button();
             settings_button->color = WHITE;
@@ -107,6 +101,32 @@ namespace PixelBattle
             Image image = LoadImage(result.data());
             (*settings_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
+        }
+    }
+
+    void LoadStartMenu(const char *assets)
+    {
+        using namespace StartMenu;
+        ClearBackground(BLACK);
+
+        if (background == nullptr)
+        {
+            LoadBackground(assets);
+        }
+
+        if (sound == nullptr)
+        {
+            LoadBackgroundSound(assets);
+        }
+
+        if (play_button == nullptr)
+        {
+            LoadPlayButton(assets);
+        }
+
+        if (settings_button == nullptr)
+        {
+            LoadSettingsButton(assets);
         }
 
         Rectangle source, dest;
