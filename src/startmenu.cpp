@@ -55,7 +55,7 @@ namespace PixelBattle
             play_button->texture = new Texture2D();
             play_button->OnClick(PlayButtonCallback);
             play_button->pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
-            play_button->size = {GetScreenWidth()/20.0f, GetScreenHeight()/20.0f};
+            play_button->size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
 
             string result = assets;
             result += "/buttons/Play.png";
