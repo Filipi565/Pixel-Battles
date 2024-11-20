@@ -43,11 +43,4 @@ namespace PixelBattle
             DrawTexturePro(*texture, source, rec, {0, 0}, 0, WHITE);
         }
     }
-
-    Button Button::Clone(bool copy_funcs)
-    {
-        Button result = Button();
-        MemoryCopy(&result, sizeof(Button), this);
-        return result;
-    }
 }

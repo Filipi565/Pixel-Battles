@@ -90,9 +90,15 @@ namespace PixelBattle
         if (settings_button == nullptr)
         {
             settings_button = new Button();
-            (*settings_button) = play_button->Clone();
+            settings_button->color = WHITE;
+            settings_button->visible = true;
             settings_button->OnClick = &SettingsButtonCallback;
-            settings_button->pos.y += (settings_button->size.y + 10);
+            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            settings_button->pos = {
+                (GetScreenWidth()-size.x)/2,
+                (GetScreenHeight()-size.y)/2
+            };
+            settings_button->size = size;
 
             string result = assets;
             result += "/buttons/Settings.png";

@@ -44,7 +44,6 @@ namespace PixelBattle
         Button();
         virtual ~Button();
         virtual void Load(void);
-        virtual Button Clone(bool copy_funcs = false);
 
         void (*OnClick)(void);
         Texture2D *texture;
