@@ -67,7 +67,7 @@ namespace PixelBattle
             Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
             play_button->pos = {
                 (GetScreenWidth()-size.x)/2,
-                (GetScreenHeight()-size.y)/2
+                (GetScreenHeight()-size.y)/2 - size.y
             };
             play_button->size = size;
 
