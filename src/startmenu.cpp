@@ -8,10 +8,10 @@ namespace PixelBattle
 {
     namespace StartMenu
     {
-        static Texture2D *background = nullptr;
         static bool sound_played = false;
-        static Sound *sound = nullptr;
+        Texture2D *background = nullptr;
         static char frames = 0;
+        Sound *sound = nullptr;
     }
 
     void LoadStartMenu(const char *assets)

@@ -5,6 +5,12 @@
 
 namespace PixelBattle
 {
+    namespace StartMenu
+    {
+        extern Texture2D *background;
+        extern Sound *sound;
+    }
+    
     extern const char *executable;
     extern bool on_start_menu;
 
