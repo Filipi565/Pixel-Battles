@@ -29,6 +29,9 @@ namespace PixelBattle
 
             background = nullptr;
             sound = nullptr;
+
+            settings_button->visible = false;
+            play_button->visible = false;
         }
 
         static void SettingsButtonCallback(void)
