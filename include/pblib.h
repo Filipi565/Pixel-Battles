@@ -43,6 +43,7 @@ namespace PixelBattle
         typedef void (*function_t)(void);
 
         Button();
+        virtual ~Button();
         virtual void Load(void);
         virtual void OnClick(function_t);
 

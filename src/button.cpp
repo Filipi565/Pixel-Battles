@@ -14,6 +14,11 @@ namespace PixelBattle
         _Allocate(0);
     }
 
+    Button::~Button()
+    {
+        MemFree(_m_functions);
+    }
+
     void Button::Load(void)
     {
         Rectangle rec;
