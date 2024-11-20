@@ -63,7 +63,6 @@ namespace PixelBattle
     {
         public:
         Button();
-        virtual ~Button();
         virtual void Load(void);
 
         void (*OnClick)(void);
