@@ -4,21 +4,32 @@ namespace PixelBattle
 {
     void Clean(void)
     {
-        if (StartMenu::sound != nullptr)
+        using namespace StartMenu;
+        if (sound != nullptr)
         {
-            UnloadSound(*StartMenu::sound);
-            delete StartMenu::sound;
+            UnloadSound(*sound);
+            delete sound;
         }
 
-        if (StartMenu::background != nullptr)
+        if (background != nullptr)
         {
-            UnloadTexture(*StartMenu::background);
-            delete StartMenu::background;
+            UnloadTexture(*background);
+            delete background;
         }
 
-        if (StartMenu::play_button != nullptr)
+        if (play_button != nullptr)
         {
-            delete StartMenu::play_button;
+            delete play_button;
+        }
+
+        if (settings_button != nullptr)
+        {
+            delete settings_button;
+        }
+
+        if (extras_button != nullptr)
+        {
+            delete extras_button;
         }
     }
 }
