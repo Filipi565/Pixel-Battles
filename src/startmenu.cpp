@@ -15,7 +15,18 @@ namespace PixelBattle
 
         static void PlayButtonCallback(void)
         {
-            fprintf(stdout, "Testing\n");
+            on_start_menu = false;
+
+            UnloadTexture(*background);
+            UnloadSound(*sound);
+
+            delete play_button;
+            delete background;
+            delete sound;
+
+            play_button = nullptr;
+            background = nullptr;
+            sound = nullptr;
         }
     }
 
