@@ -18,6 +18,8 @@ namespace PixelBattle
 
     Button::~Button()
     {
+        UnloadTexture(*texture);
+        
         MemFree(_m_functions);
         delete texture;
     }
