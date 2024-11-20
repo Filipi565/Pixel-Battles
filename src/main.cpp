@@ -8,7 +8,7 @@ namespace PixelBattle
 
 using namespace PixelBattle;
 
-int main(int, const char *argv[])
+int main(int argc, const char *argv[])
 {
     InitWindow(0, 0, "Pixel Battle");
 
