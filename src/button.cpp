@@ -11,7 +11,7 @@ namespace PixelBattle
         size = {0, 0};
         pos = {0, 0};
 
-        OnClick = _M_NoPointer;
+        OnClick = &_M_NoPointer;
     }
 
     Button::~Button()
