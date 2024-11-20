@@ -58,6 +58,8 @@ int main(int, const char *argv[])
         EndDrawing();
     }
 
+    delete[] assets;
+
     if (StartMenu::sound != nullptr)
     {
         UnloadSound(*StartMenu::sound);
