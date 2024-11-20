@@ -47,6 +47,26 @@ namespace PixelBattle
         }
     }
 
+    Button Button::Clone(bool copy_funcs)
+    {
+        Button result = Button();
+        (*result.texture) = (*this->texture);
+        result.color = this->color;
+        result.size = this->size;
+        result.visible = false;
+        result.pos = this->pos;
+
+        if (copy_funcs)
+        {
+            for (unsigned long int i = 0; i < _m_count; i++)
+            {
+                result.OnClick(_m_functions[i]);
+            }
+        }
+
+        return result;
+    }
+
     void Button::OnClick(function_t func)
     {
         _m_count++;
