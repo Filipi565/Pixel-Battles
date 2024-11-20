@@ -65,7 +65,9 @@ namespace PixelBattle
     
     namespace StartMenu
     {
+        extern Button *settings_button;
         extern Texture2D *background;
+        extern Button *extras_button;
         extern Button *play_button;
         extern Sound *sound;
     }

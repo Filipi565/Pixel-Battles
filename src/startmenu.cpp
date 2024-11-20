@@ -7,12 +7,15 @@ namespace PixelBattle
 {
     namespace StartMenu
     {
-        static bool sound_played = false;
+        Button *settings_button = nullptr;
+        Button *extras_button = nullptr;
         Texture2D *background = nullptr;
         Button *play_button = nullptr;
-        static char frames = 0;
         Sound *sound = nullptr;
 
+        static bool sound_played = false;
+        static char frames = 0;
+        
         static void PlayButtonCallback(void)
         {
             on_start_menu = false;
