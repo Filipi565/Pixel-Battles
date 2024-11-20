@@ -28,7 +28,7 @@ int main(int, const char *argv[])
 
     while (!WindowShouldClose())
     {
-        if (!IsCursorOnScreen() && GetTime() >= 5)
+        if (!IsCursorOnScreen() && GetTime() >= 5 && !IsWindowMinimized())
         {
             MinimizeWindow();
         }
