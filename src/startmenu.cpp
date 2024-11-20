@@ -107,6 +107,27 @@ namespace PixelBattle
             (*settings_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
         }
+
+        static void LoadExtrasButton(const char *assets)
+        {
+            extras_button = new Button();
+            extras_button->color = WHITE;
+            extras_button->visible = true;
+            extras_button->OnClick = &SettingsButtonCallback;
+            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            extras_button->pos = {
+                (GetScreenWidth()-size.x)/2,
+                (GetScreenHeight()-size.y)/2 + size.y + 10
+            };
+            extras_button->size = size;
+
+            string result = assets;
+            result += "/buttons/Extras.png";
+
+            Image image = LoadImage(result.data());
+            (*extras_button->texture) = LoadTextureFromImage(image);
+            UnloadImage(image);
+        }
     }
 
     void LoadStartMenu(const char *assets)
@@ -134,6 +155,11 @@ namespace PixelBattle
             LoadSettingsButton(assets);
         }
 
+        if (extras_button == nullptr)
+        {
+            LoadExtrasButton(assets);
+        }
+
         Rectangle source, dest;
 
         source = {0.0f, 0.0f, (float)background->width, (float)background->height};
@@ -141,8 +167,9 @@ namespace PixelBattle
 
         DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
 
-        play_button->Load();
         settings_button->Load();
+        extras_button->Load();
+        play_button->Load();
 
         if (!sound_played)
         {
