@@ -32,6 +32,11 @@ namespace PixelBattle
             background = nullptr;
             sound = nullptr;
         }
+
+        static void SettingsButtonCallback(void)
+        {
+            fprintf(stdout, "Testing\n");
+        }
     }
 
     void LoadStartMenu(const char *assets)
@@ -80,6 +85,14 @@ namespace PixelBattle
             Image image = LoadImage(result.data());
             (*play_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
+        }
+
+        if (settings_button == nullptr)
+        {
+            settings_button = new Button();
+            (*settings_button) = play_button->Clone();
+            settings_button->pos.y += (settings_button->size.y + 10);
+            settings_button->OnClick = SettingsButtonCallback;
         }
 
         Rectangle source, dest;
