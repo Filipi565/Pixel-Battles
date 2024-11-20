@@ -113,7 +113,7 @@ namespace PixelBattle
             extras_button = new Button();
             extras_button->color = WHITE;
             extras_button->visible = true;
-            extras_button->OnClick = &SettingsButtonCallback;
+            extras_button->OnClick = &ExtrasButtonCallback;
             Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
             extras_button->pos = {
                 (GetScreenWidth()-size.x)/2,
