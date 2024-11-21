@@ -2,7 +2,7 @@
 
 namespace PixelBattle
 {
-    Entity::Entity()
+    Entity::Entity() : TextureObject()
     {
         pos = {0, 0};
         color = {0, 0, 0, 0};

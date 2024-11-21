@@ -4,9 +4,8 @@
 
 namespace PixelBattle
 {
-    Button::Button()
+    Button::Button() : TextureObject()
     {
-        texture = new Texture2D();
         visible = false;
         size = {0, 0};
         pos = {0, 0};
