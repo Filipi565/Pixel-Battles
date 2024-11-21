@@ -65,7 +65,7 @@ namespace PixelBattle
     {
         public:
         Button();
-        virtual void Load(void);
+        virtual void Update(void);
 
         void (*OnClick)(void);
         bool visible;

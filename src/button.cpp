@@ -13,7 +13,7 @@ namespace PixelBattle
         OnClick = &_M_NoPointer;
     }
 
-    void Button::Load(void)
+    void Button::Update(void)
     {
         Rectangle rec;
         rec = {pos.x, pos.y, size.x, size.y};
