@@ -24,11 +24,14 @@ namespace PixelBattle
             this->OnClick();
         }
 
-        if (visible)
+        Rectangle source = {0, 0, (float)texture->width, (float)texture->height};
+        if (visible && texture != nullptr)
         {
-            Rectangle source = {0, 0, (float)texture->width, (float)texture->height};
-
-            DrawTexturePro(*texture, source, rec, {0, 0}, 0, WHITE);
+            DrawTexturePro(*texture, source, rec, {0, 0}, 0, color);
+        }
+        else
+        {
+            DrawRectangleV(pos, size, color);
         }
     }
 }
