@@ -23,18 +23,9 @@ namespace PixelBattle
     class TextureObject: public Object
     {
         public:
-        TextureObject() {texture = new Texture2D();}
+        TextureObject();
 
-        virtual ~TextureObject()
-        {
-            if (texture != nullptr)
-            {
-                UnloadTexture(*texture);
-                delete texture;
-            }
-
-            texture = nullptr;
-        }
+        virtual ~TextureObject();
 
         Texture2D *texture;
     };
