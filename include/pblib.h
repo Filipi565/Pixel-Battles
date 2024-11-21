@@ -35,7 +35,7 @@ namespace PixelBattle
     class Entity: public Object
     {
         public:
-        enum Action
+        enum class Action
         {
             IDLE = 0x0,
             WALK = 0x1,
@@ -50,8 +50,8 @@ namespace PixelBattle
         virtual void Load(void);
 
         unsigned int speed;
-        Action action = IDLE;
         unsigned char health = 100;
+        Action action = Action::IDLE;
 
         unsigned long int current_frame;
         unsigned long int frames_count;
