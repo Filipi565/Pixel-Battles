@@ -55,6 +55,9 @@ namespace PixelBattle
         unsigned long int current_frame;
         unsigned long int frames_count;
         Texture2D *frames;
+
+        private:
+        Vector2 size;
     };
 
     class Button: public TextureObject
