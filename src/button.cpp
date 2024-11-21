@@ -29,7 +29,7 @@ namespace PixelBattle
         {
             DrawTexturePro(*texture, source, rec, {0, 0}, 0, color);
         }
-        else
+        else if (visible)
         {
             DrawRectangleV(pos, size, color);
         }
