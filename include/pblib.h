@@ -59,6 +59,10 @@ namespace PixelBattle
         unsigned int speed;
         Action action = IDLE;
         unsigned char health = 100;
+
+        unsigned long int current_frame;
+        unsigned long int frames_count;
+        Texture2D *frames;
     };
 
     class Button: public TextureObject
