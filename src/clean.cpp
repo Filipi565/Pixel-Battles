@@ -2,6 +2,8 @@
 
 namespace PixelBattle
 {
+    extern Sound *button_click_effect;
+
     void Clean(void)
     {
         using namespace StartMenu;
@@ -30,6 +32,12 @@ namespace PixelBattle
         if (extras_button != nullptr)
         {
             delete extras_button;
+        }
+
+        if (button_click_effect != nullptr)
+        {
+            UnloadSound(*button_click_effect);
+            delete button_click_effect;
         }
     }
 }
