@@ -21,15 +21,6 @@ namespace PixelBattle
             on_start_menu = false;
             sound_played = false;
 
-            UnloadTexture(*background);
-            UnloadSound(*sound);
-
-            delete background;
-            delete sound;
-
-            background = nullptr;
-            sound = nullptr;
-
             settings_button->visible = false;
             play_button->visible = false;
         }
