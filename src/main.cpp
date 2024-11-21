@@ -24,8 +24,8 @@ int main(int argc, const char *argv[])
     InitWindow(0, 0, "Pixel Battle");
 
     executable = argv[0];
-    char *temp_assets_path = GetAssetsPath();
-    assets = temp_assets_path;
+    char *assets_path = GetAssetsPath();
+    assets = assets_path; // Set it globaly
 
     ToggleFullscreen();
 
@@ -61,7 +61,7 @@ int main(int argc, const char *argv[])
         EndDrawing();
     }
 
-    delete[] temp_assets_path;
+    delete[] assets_path;
 
     Clean();
 
