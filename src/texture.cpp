@@ -9,9 +9,13 @@ namespace PixelBattle
 
     TextureObject::~TextureObject()
     {
-        if (texture != nullptr)
+        if (IsTextureValid(*texture))
         {
             UnloadTexture(*texture);
+        }
+
+        if (texture != nullptr)
+        {
             delete texture;
         }
 
