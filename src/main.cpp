@@ -13,6 +13,7 @@ namespace PixelBattle
 using namespace PixelBattle;
 using std::string;
 
+// On my pc using WinMain does not work propely
 int main(int argc, const char *argv[])
 {
     if (!(argc >= 2 && argv[1] == string("--hide-console=off")))
