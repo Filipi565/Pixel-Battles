@@ -16,6 +16,7 @@ namespace PixelBattle
         static bool sound_played = false;
         static char frames = 0;
 
+        #pragma region Callbacks
         static void PlayButtonCallback(void)
         {
             on_start_menu = false;
@@ -35,6 +36,8 @@ namespace PixelBattle
             fprintf(stdout, "Extras\n");
         }
 
+        #pragma endregion
+        #pragma region Load Items
         static void CreateBackground(void)
         {
             string result = assets;
@@ -119,6 +122,8 @@ namespace PixelBattle
             (*extras_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
         }
+
+        #pragma endregion
     }
 
     void LoadStartMenu(void)
