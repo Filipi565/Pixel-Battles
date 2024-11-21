@@ -1,4 +1,5 @@
 #include <pblib.h>
+#include <string>
 
 namespace PixelBattle
 {
@@ -9,10 +10,15 @@ namespace PixelBattle
 }
 
 using namespace PixelBattle;
+using std::string;
 
 int main(int argc, const char *argv[])
 {
-    HideConsole();
+    if (argc >= 2 && argv[1] != string("--hide-console=off"))
+    {
+        HideConsole();
+    }
+    
     InitWindow(0, 0, "Pixel Battle");
 
     executable = argv[0];
