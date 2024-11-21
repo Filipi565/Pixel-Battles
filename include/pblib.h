@@ -23,6 +23,8 @@ namespace PixelBattle
     class TextureObject: public Object
     {
         public:
+        TextureObject() {texture = new Texture2D();}
+
         virtual ~TextureObject()
         {
             if (texture != nullptr)
