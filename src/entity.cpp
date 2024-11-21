@@ -12,6 +12,15 @@ namespace PixelBattle
 
     void Entity::Update(void)
     {
+        if (IsKeyDown(KEY_A))
+        {
+            pos.x -= speed;
+        }
+        else if (IsKeyDown(KEY_D))
+        {
+            pos.x += speed;
+        }
+
         DrawRectangleV(pos, size, color);
     }
 }

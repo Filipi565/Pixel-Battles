@@ -55,15 +55,6 @@ int main(int argc, const char *argv[])
 
         ClearBackground(BLACK);
 
-        if (IsKeyDown(KEY_A))
-        {
-            player.pos.x -= player.speed;
-        }
-        else if (IsKeyDown(KEY_D))
-        {
-            player.pos.x += player.speed;
-        }
-
         player.Update();
 
         EndDrawing();
