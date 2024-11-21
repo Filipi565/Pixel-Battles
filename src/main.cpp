@@ -4,6 +4,7 @@
 namespace PixelBattle
 {
     const char *executable = nullptr;
+    const char *assets = nullptr;
     bool on_start_menu = true;
 
     void Clean(void);
@@ -22,7 +23,8 @@ int main(int argc, const char *argv[])
     InitWindow(0, 0, "Pixel Battle");
 
     executable = argv[0];
-    char *assets = GetAssetsPath();
+    char *temp_assets_path = GetAssetsPath();
+    assets = temp_assets_path;
 
     ToggleFullscreen();
 
@@ -46,7 +48,7 @@ int main(int argc, const char *argv[])
 
         if (on_start_menu)
         {
-            LoadStartMenu(assets);
+            LoadStartMenu();
             EndDrawing();
             continue;
         }
@@ -67,7 +69,7 @@ int main(int argc, const char *argv[])
         EndDrawing();
     }
 
-    delete[] assets;
+    delete[] temp_assets_path;
 
     Clean();
 

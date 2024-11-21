@@ -7,11 +7,12 @@ namespace PixelBattle
 {
     
     extern const char *executable;
+    extern const char *assets;
     extern bool on_start_menu;
 
     void HideConsole(void);
+    void LoadStartMenu(void);
     char *GetAssetsPath(void);
-    void LoadStartMenu(const char *);
     int MemoryCopy(void *, unsigned long int, const void *);
 
     struct Object
