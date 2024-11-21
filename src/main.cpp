@@ -64,7 +64,7 @@ int main(int argc, const char *argv[])
             player.pos.x += player.speed;
         }
 
-        player.Load();
+        player.Update();
 
         EndDrawing();
     }

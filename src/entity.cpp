@@ -10,7 +10,7 @@ namespace PixelBattle
         size = {GetScreenHeight()/20.0f, GetScreenWidth()/20.0f};
     }
 
-    void Entity::Load(void)
+    void Entity::Update(void)
     {
         DrawRectangleV(pos, size, color);
     }

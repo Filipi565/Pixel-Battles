@@ -47,7 +47,7 @@ namespace PixelBattle
 
         Entity();
 
-        virtual void Load(void);
+        virtual void Update(void);
 
         unsigned int speed;
         unsigned char health = 100;
