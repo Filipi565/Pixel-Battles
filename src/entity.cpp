@@ -7,11 +7,11 @@ namespace PixelBattle
         pos = {0, 0};
         color = {0, 0, 0, 0};
         speed = 0;
+        size = {GetScreenHeight()/20.0f, GetScreenWidth()/20.0f};
     }
 
     void Entity::Load(void)
     {
-        Vector2 size = {GetScreenHeight()/20.0f, GetScreenWidth()/20.0f};
         DrawRectangleV(pos, size, color);
     }
 }
