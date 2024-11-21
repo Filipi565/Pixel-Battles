@@ -15,6 +15,7 @@ namespace PixelBattle
         size = {0, 0};
         pos = {0, 0};
 
+        // Commit f5b71c9b: Add a button click sound effect to the game
         if (button_click_effect == nullptr)
         {
             string result = assets;
