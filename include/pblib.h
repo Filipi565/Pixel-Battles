@@ -39,7 +39,7 @@ namespace PixelBattle
         Texture2D *texture;
     };
 
-    class Entity: public TextureObject
+    class Entity: public Object
     {
         public:
         enum Action
