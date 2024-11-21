@@ -9,6 +9,7 @@ namespace PixelBattle
     extern const char *executable;
     extern bool on_start_menu;
 
+    void HideConsole(void);
     char *GetAssetsPath(void);
     void LoadStartMenu(const char *);
     int MemoryCopy(void *, unsigned long int, const void *);
