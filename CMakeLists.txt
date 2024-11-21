@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project("Pixel Battle")
 
-include_directories("C:\\Users\\Filipi\\Documents\\C-C++ Projects\\Include" ./include)
-link_directories("C:\\Users\\Filipi\\Documents\\C-C++ Projects\\Lib")
+include_directories(./include)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
