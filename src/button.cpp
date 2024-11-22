@@ -7,23 +7,13 @@ using std::string;
 
 namespace PixelBattle
 {
-    Sound *button_click_effect = nullptr;
+    extern Sound button_click_effect;
 
     Button::Button() : TextureObject()
     {
         visible = false;
         size = {0, 0};
         pos = {0, 0};
-
-        // Commit f5b71c9b: Add a button click sound effect to the game
-        if (button_click_effect == nullptr)
-        {
-            string result = assets;
-            result += "/sounds/ButtonClick.wav";
-
-            button_click_effect = new Sound();
-            (*button_click_effect) = LoadSound(result.data());
-        }
 
         OnClick = &_M_NoPointer;
     }
@@ -37,7 +27,7 @@ namespace PixelBattle
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && in_colision && visible)
         {
             this->OnClick();
-            PlaySound(*button_click_effect);
+            PlaySound(button_click_effect);
         }
 
         Rectangle source = {0, 0, (float)texture->width, (float)texture->height};

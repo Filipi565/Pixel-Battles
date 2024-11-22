@@ -2,7 +2,7 @@
 
 namespace PixelBattle
 {
-    extern Sound *button_click_effect;
+    extern Sound button_click_effect;
 
     void UnloadAssets(void)
     {
@@ -10,9 +10,8 @@ namespace PixelBattle
 
         UnloadSound(sound);
         UnloadTexture(background);
-        UnloadSound(*button_click_effect);
+        UnloadSound(button_click_effect);
 
-        delete button_click_effect;
         delete settings_button;
         delete extras_button;
         delete play_button;

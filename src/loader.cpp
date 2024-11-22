@@ -5,6 +5,8 @@ using std::string;
 
 namespace PixelBattle
 {
+    Sound button_click_effect;
+
     namespace StartMenu
     {
         Button *settings_button = nullptr;
@@ -97,11 +99,20 @@ namespace PixelBattle
             (*play_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
         }
+
+        static void LoadButtonClickEffect(void)
+        {
+            string result = assets;
+            result += "/sounds/ButtonClick.wav";
+
+            button_click_effect = LoadSound(result.data());
+        }
     }
 
     void LoadAssets(void)
     {
         using namespace Loader;
+        LoadButtonClickEffect();
         LoadBackgroundSound();
         LoadSettingsButton();
         LoadExtrasButton();
