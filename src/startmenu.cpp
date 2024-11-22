@@ -7,7 +7,6 @@ namespace PixelBattle
 {
     namespace StartMenu
     {
-        static bool sound_played = false;
         static char frames = 0;
     }
 
@@ -27,14 +26,13 @@ namespace PixelBattle
         extras_button->Update();
         play_button->Update();
 
-        if (!sound_played)
+        if (!IsMusicStreamPlaying(sound))
         {
             if (frames >= 120)
             {
-                sound_played = true;
                 frames = 0;
 
-                PlaySound(sound);
+                PlayMusicStream(sound);
             }
             else
             {

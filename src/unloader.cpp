@@ -10,7 +10,7 @@ namespace PixelBattle
 
         UnloadSound(button_click_effect);
         UnloadTexture(background);
-        UnloadSound(sound);
+        UnloadMusicStream(sound);
 
         delete settings_button;
         delete extras_button;
