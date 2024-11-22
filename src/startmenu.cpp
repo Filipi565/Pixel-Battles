@@ -9,7 +9,7 @@ namespace PixelBattle
     {
         extern Button *settings_button;
         Button *extras_button = nullptr;
-        Texture2D *background = nullptr;
+        extern Texture2D *background;
         Button *play_button = nullptr;
         Sound *sound = nullptr;
 
@@ -38,18 +38,6 @@ namespace PixelBattle
 
         #pragma endregion
         #pragma region Load Items
-        static void CreateBackground(void)
-        {
-            string result = assets;
-            result += "/backgrounds/StartMenu.png";
-
-            Image image = LoadImage(result.data());
-
-            background = new Texture2D();
-            (*background) = LoadTextureFromImage(image);
-
-            UnloadImage(image);
-        }
 
         static void CreateBackgroundSound(void)
         {
@@ -109,11 +97,6 @@ namespace PixelBattle
     {
         using namespace StartMenu;
         ClearBackground(BLACK);
-
-        if (background == nullptr)
-        {
-            CreateBackground();
-        }
 
         if (sound == nullptr)
         {

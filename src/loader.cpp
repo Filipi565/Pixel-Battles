@@ -8,11 +8,25 @@ namespace PixelBattle
     namespace StartMenu
     {
         Button *settings_button = nullptr;
+        Texture2D *background = nullptr;
     }
 
     namespace Loader
     {
         using namespace StartMenu;
+
+        static void LoadBackgound(void)
+        {
+            string result = assets;
+            result += "/backgrounds/StartMenu.png";
+
+            Image image = LoadImage(result.data());
+
+            background = new Texture2D();
+            (*background) = LoadTextureFromImage(image);
+
+            UnloadImage(image);
+        }
 
         static void LoadSettingsButton(void)
         {
@@ -39,5 +53,6 @@ namespace PixelBattle
     {
         using namespace Loader;
         LoadSettingsButton();
+        LoadBackgound();
     }
 }
