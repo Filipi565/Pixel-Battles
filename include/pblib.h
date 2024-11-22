@@ -11,6 +11,7 @@ namespace PixelBattle
 
     void LoadAssets(void);
     void HideConsole(void);
+    void LoadTextures(void);
     void UnloadAssets(void);
     void LoadStartMenu(void);
     char *GetAssetsPath(void);

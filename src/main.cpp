@@ -39,6 +39,9 @@ int main(int argc, const char *argv[])
 
     SetTargetFPS(60);
 
+    // Load all Assets
+    std::thread _loader = std::thread(LoadAssets);
+
     while (!is_game_loaded)
     {
         BeginDrawing();
@@ -46,6 +49,10 @@ int main(int argc, const char *argv[])
         DrawText("Loading...", GetScreenWidth()/2-15, GetScreenHeight()/2-10, 30, WHITE);
         EndDrawing();
     }
+
+    // Load all Textures from the images
+    // Note: textures can not be loaded outside the main thread
+    LoadTextures();
 
     while (!WindowShouldClose())
     {
