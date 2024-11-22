@@ -10,6 +10,7 @@ namespace PixelBattle
         Button *settings_button = nullptr;
         Button *extras_button = nullptr;
         Texture2D *background = nullptr;
+        Sound *sound = nullptr;
     }
 
     namespace Loader
@@ -68,11 +69,21 @@ namespace PixelBattle
             (*extras_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
         }
+
+        static void LoadBackgroundSound(void)
+        {
+            string result = assets;
+            result += "/sounds/StartMenu.mp3";
+
+            sound = new Sound();
+            (*sound) = LoadSound(result.data());
+        }
     }
 
     void LoadAssets(void)
     {
         using namespace Loader;
+        LoadBackgroundSound();
         LoadSettingsButton();
         LoadExtrasButton();
         LoadBackgound();

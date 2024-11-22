@@ -11,7 +11,7 @@ namespace PixelBattle
         extern Button *extras_button;
         extern Texture2D *background;
         Button *play_button = nullptr;
-        Sound *sound = nullptr;
+        extern Sound *sound;
 
         static bool sound_played = false;
         static char frames = 0;
@@ -28,15 +28,6 @@ namespace PixelBattle
 
         #pragma endregion
         #pragma region Load Items
-
-        static void CreateBackgroundSound(void)
-        {
-            string result = assets;
-            result += "/sounds/StartMenu.mp3";
-
-            sound = new Sound();
-            (*sound) = LoadSound(result.data());
-        }
 
         static void CreatePlayButton(void)
         {
@@ -66,11 +57,6 @@ namespace PixelBattle
     {
         using namespace StartMenu;
         ClearBackground(BLACK);
-
-        if (sound == nullptr)
-        {
-            CreateBackgroundSound();
-        }
 
         if (play_button == nullptr)
         {
