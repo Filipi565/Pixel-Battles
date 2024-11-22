@@ -45,7 +45,7 @@ int main(int argc, const char *argv[])
     {
         BeginDrawing();
         ClearBackground(BLACK);
-        DrawText("Loading...", GetScreenWidth()/2-15, GetScreenHeight()/2-10, 30, WHITE);
+        DrawText("Loading...", 10, 20, 30, WHITE);
         EndDrawing();
     }
 
