@@ -6,8 +6,6 @@ namespace PixelBattle
     const char *executable = nullptr;
     const char *assets = nullptr;
     bool on_start_menu = true;
-
-    void Clean(void);
 }
 
 using namespace PixelBattle;

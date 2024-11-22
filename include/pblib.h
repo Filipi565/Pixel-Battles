@@ -9,6 +9,7 @@ namespace PixelBattle
     extern const char *assets;
     extern bool on_start_menu;
 
+    void Clean(void);
     void LoadAssets(void);
     void HideConsole(void);
     void LoadStartMenu(void);
