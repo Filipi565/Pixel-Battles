@@ -30,7 +30,7 @@ int Application::Run(int &argc, const char *argv[])
     {
         HideConsole();
     }
-    
+
     InitWindow(0, 0, "Pixel Battle");
 
     executable = argv[0];
