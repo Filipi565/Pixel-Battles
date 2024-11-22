@@ -30,7 +30,7 @@ int main(int argc, const char *argv[])
 
     InitAudioDevice();
 
-    auto loader = std::thread(LoadAssets);
+    LoadAssets();
 
     ToggleFullscreen();
 
