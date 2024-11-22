@@ -27,6 +27,8 @@ int main(int argc, const char *argv[])
     char *assets_path = GetAssetsPath();
     assets = assets_path; // Set it globaly
 
+    LoadAssets();
+
     ToggleFullscreen();
 
     Entity player;
