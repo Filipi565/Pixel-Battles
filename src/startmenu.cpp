@@ -26,16 +26,6 @@ namespace PixelBattle
             play_button->visible = false;
         }
 
-        static void SettingsButtonCallback(void)
-        {
-            fprintf(stdout, "Settings\n");
-        }
-
-        static void ExtrasButtonCallback(void)
-        {
-            fprintf(stdout, "Extras\n");
-        }
-
         #pragma endregion
         #pragma region Load Items
 
