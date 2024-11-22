@@ -8,15 +8,6 @@ namespace PixelBattle
     bool is_game_loaded = false;
     Sound button_click_effect;
 
-    namespace StartMenu
-    {
-        Button *settings_button = nullptr;
-        Button *extras_button = nullptr;
-        Button *play_button = nullptr;
-        Texture2D background;
-        Sound sound;
-    }
-
     namespace Loader
     {
         using namespace StartMenu;
