@@ -27,6 +27,8 @@ int main(int argc, const char *argv[])
     char *assets_path = GetAssetsPath();
     assets = assets_path; // Set it globaly
 
+    InitAudioDevice();
+
     LoadAssets();
 
     ToggleFullscreen();
@@ -37,8 +39,6 @@ int main(int argc, const char *argv[])
     player.pos = {GetScreenWidth()/2.0f, GetScreenHeight()/2.0f};
 
     SetTargetFPS(60);
-
-    InitAudioDevice();
 
     while (!WindowShouldClose())
     {
