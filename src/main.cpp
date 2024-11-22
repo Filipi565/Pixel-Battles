@@ -1,6 +1,7 @@
 #include <iostream>
 #include <pblib.h>
 #include <string>
+#include <thread>
 
 namespace PixelBattle
 {
@@ -28,8 +29,6 @@ int main(int argc, const char *argv[])
     assets = assets_path; // Set it globaly
 
     InitAudioDevice();
-
-    LoadAssets();
 
     ToggleFullscreen();
 
