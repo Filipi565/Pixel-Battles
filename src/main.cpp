@@ -1,5 +1,7 @@
+#include <iostream>
 #include <pblib.h>
 #include <string>
+#include <thread>
 
 namespace PixelBattle
 {
@@ -28,7 +30,7 @@ int main(int argc, const char *argv[])
 
     InitAudioDevice();
 
-    LoadAssets();
+    auto loader = std::thread(LoadAssets);
 
     ToggleFullscreen();
 
@@ -47,6 +49,14 @@ int main(int argc, const char *argv[])
         }
 
         BeginDrawing();
+
+        if (!is_game_loaded)
+        {
+            ClearBackground(BLACK);
+            DrawText("Loading...", GetScreenWidth()/2-15, GetScreenHeight()/2-10, 30, WHITE);
+            EndDrawing();
+            continue;
+        }
 
         if (on_start_menu)
         {
