@@ -5,7 +5,6 @@
 
 namespace PixelBattle
 {
-    
     extern const char *executable;
     extern const char *assets;
     extern bool on_start_menu;
