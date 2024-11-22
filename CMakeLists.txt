@@ -13,6 +13,8 @@ endif(DEFINED EXTRA_INCLUDE_DIRS)
 
 if (DEFINED EXTRA_LINK_DIRS)
     link_directories(${EXTRA_LINK_DIRS})
+else() # for the find_library function
+    set(EXTRA_LINK_DIRS "")
 endif(DEFINED EXTRA_LINK_DIRS)
 
 set(CMAKE_BUILD_TYPE Release)
@@ -29,7 +31,8 @@ else()
     message(FATAL_ERROR "Platform not supported")
 endif(WIN32)
 
-find_library(RAYLIB raylib cwalk ${LIBRARIES})
+find_library(RAYLIB_CWALK raylib cwalk HINTS ${EXTRA_LINK_DIRS} REQUIRED)
+find_library(OTHER_LIBS ${LIBRARIES})
 
 add_executable(PixelBattle ${SOURCE})
 
