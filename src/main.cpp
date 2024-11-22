@@ -64,6 +64,9 @@ int Application::Run(int &argc, const char *argv[])
     // Note: textures can not be loaded outside the main thread
     LoadTextures();
 
+    delete[] assets_path;
+    assets = nullptr;
+
     while (!WindowShouldClose())
     {
         if (!IsCursorOnScreen() && GetTime() >= 5 && !IsWindowMinimized())
@@ -86,8 +89,6 @@ int Application::Run(int &argc, const char *argv[])
 
         EndDrawing();
     }
-
-    delete[] assets_path;
 
     UnloadAssets();
 
