@@ -30,10 +30,10 @@ namespace PixelBattle
 
         Rectangle source, dest;
 
-        source = {0.0f, 0.0f, (float)background->width, (float)background->height};
+        source = {0.0f, 0.0f, (float)background.width, (float)background.height};
         dest = {0.0f, 0.0f, (float)GetScreenWidth(), (float)GetScreenHeight()};
 
-        DrawTexturePro(*background, source, dest, {0, 0}, 0, WHITE);
+        DrawTexturePro(background, source, dest, {0, 0}, 0, WHITE);
 
         settings_button->Update();
         extras_button->Update();
@@ -46,7 +46,7 @@ namespace PixelBattle
                 sound_played = true;
                 frames = 0;
 
-                PlaySound(*sound);
+                PlaySound(sound);
             }
             else
             {

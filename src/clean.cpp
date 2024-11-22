@@ -8,15 +8,13 @@ namespace PixelBattle
     {
         using namespace StartMenu;
 
-        UnloadSound(*sound);
-        UnloadTexture(*background);
+        UnloadSound(sound);
+        UnloadTexture(background);
         UnloadSound(*button_click_effect);
 
         delete button_click_effect;
         delete settings_button;
         delete extras_button;
         delete play_button;
-        delete background;
-        delete sound;
     }
 }
