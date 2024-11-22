@@ -40,6 +40,14 @@ int main(int argc, const char *argv[])
 
     SetTargetFPS(60);
 
+    while (!is_game_loaded)
+    {
+        BeginDrawing();
+        ClearBackground(BLACK);
+        DrawText("Loading...", GetScreenWidth()/2-15, GetScreenHeight()/2-10, 30, WHITE);
+        EndDrawing();
+    }
+
     while (!WindowShouldClose())
     {
         if (!IsCursorOnScreen() && GetTime() >= 5 && !IsWindowMinimized())
@@ -48,14 +56,6 @@ int main(int argc, const char *argv[])
         }
 
         BeginDrawing();
-
-        if (!is_game_loaded)
-        {
-            ClearBackground(BLACK);
-            DrawText("Loading...", GetScreenWidth()/2-15, GetScreenHeight()/2-10, 30, WHITE);
-            EndDrawing();
-            continue;
-        }
 
         if (on_start_menu)
         {
