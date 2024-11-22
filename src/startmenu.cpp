@@ -9,18 +9,6 @@ namespace PixelBattle
     {
         static bool sound_played = false;
         static char frames = 0;
-
-        #pragma region Callbacks
-        static void PlayButtonCallback(void)
-        {
-            on_start_menu = false;
-            sound_played = false;
-
-            settings_button->visible = false;
-            play_button->visible = false;
-        }
-
-        #pragma endregion
     }
 
     void LoadStartMenu(void)
