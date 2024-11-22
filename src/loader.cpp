@@ -8,6 +8,7 @@ namespace PixelBattle
     namespace StartMenu
     {
         Button *settings_button = nullptr;
+        Button *extras_button = nullptr;
         Texture2D *background = nullptr;
     }
 
@@ -47,12 +48,33 @@ namespace PixelBattle
             (*settings_button->texture) = LoadTextureFromImage(image);
             UnloadImage(image);
         }
+
+        static void LoadExtrasButton(void)
+        {
+            extras_button = new Button();
+            extras_button->color = WHITE;
+            extras_button->visible = true;
+            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            extras_button->pos = {
+                (GetScreenWidth()-size.x)/2,
+                (GetScreenHeight()-size.y)/2 + size.y + 10
+            };
+            extras_button->size = size;
+
+            string result = assets;
+            result += "/buttons/Extras.png";
+
+            Image image = LoadImage(result.data());
+            (*extras_button->texture) = LoadTextureFromImage(image);
+            UnloadImage(image);
+        }
     }
 
     void LoadAssets(void)
     {
         using namespace Loader;
         LoadSettingsButton();
+        LoadExtrasButton();
         LoadBackgound();
     }
 }

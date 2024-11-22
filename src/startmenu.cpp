@@ -8,7 +8,7 @@ namespace PixelBattle
     namespace StartMenu
     {
         extern Button *settings_button;
-        Button *extras_button = nullptr;
+        extern Button *extras_button;
         extern Texture2D *background;
         Button *play_button = nullptr;
         Sound *sound = nullptr;
@@ -69,27 +69,6 @@ namespace PixelBattle
             UnloadImage(image);
         }
 
-        static void CreateExtrasButton(void)
-        {
-            extras_button = new Button();
-            extras_button->color = WHITE;
-            extras_button->visible = true;
-            extras_button->OnClick = &ExtrasButtonCallback;
-            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
-            extras_button->pos = {
-                (GetScreenWidth()-size.x)/2,
-                (GetScreenHeight()-size.y)/2 + size.y + 10
-            };
-            extras_button->size = size;
-
-            string result = assets;
-            result += "/buttons/Extras.png";
-
-            Image image = LoadImage(result.data());
-            (*extras_button->texture) = LoadTextureFromImage(image);
-            UnloadImage(image);
-        }
-
         #pragma endregion
     }
 
@@ -106,11 +85,6 @@ namespace PixelBattle
         if (play_button == nullptr)
         {
             CreatePlayButton();
-        }
-
-        if (extras_button == nullptr)
-        {
-            CreateExtrasButton();
         }
 
         Rectangle source, dest;
