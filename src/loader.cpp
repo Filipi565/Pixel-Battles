@@ -10,6 +10,7 @@ namespace PixelBattle
         Button *settings_button = nullptr;
         Button *extras_button = nullptr;
         Texture2D *background = nullptr;
+        Button *play_button = nullptr;
         Sound *sound = nullptr;
     }
 
@@ -78,6 +79,26 @@ namespace PixelBattle
             sound = new Sound();
             (*sound) = LoadSound(result.data());
         }
+
+        static void LoadPlayButton(void)
+        {
+            play_button = new Button();
+            play_button->color = WHITE;
+            play_button->visible = true;
+            Vector2 size = {GetScreenWidth()/5.0f, GetScreenHeight()/9.0f};
+            play_button->pos = {
+                (GetScreenWidth()-size.x)/2,
+                (GetScreenHeight()-size.y)/2 - size.y - 10
+            };
+            play_button->size = size;
+
+            string result = assets;
+            result += "/buttons/Play.png";
+
+            Image image = LoadImage(result.data());
+            (*play_button->texture) = LoadTextureFromImage(image);
+            UnloadImage(image);
+        }
     }
 
     void LoadAssets(void)
@@ -86,6 +107,7 @@ namespace PixelBattle
         LoadBackgroundSound();
         LoadSettingsButton();
         LoadExtrasButton();
+        LoadPlayButton();
         LoadBackgound();
     }
 }
