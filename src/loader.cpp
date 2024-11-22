@@ -5,6 +5,7 @@ using std::string;
 
 namespace PixelBattle
 {
+    bool is_game_loaded = false;
     Sound button_click_effect;
 
     namespace StartMenu
@@ -118,5 +119,7 @@ namespace PixelBattle
         LoadExtrasButton();
         LoadPlayButton();
         LoadBackgound();
+
+        is_game_loaded = true;
     }
 }
