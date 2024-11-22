@@ -58,6 +58,7 @@ namespace PixelBattle
             result += "/sounds/StartMenu.mp3";
 
             sound = LoadMusicStream(result.data());
+            sound.looping = true;
         }
 
         static Image LoadBackgound(void)
