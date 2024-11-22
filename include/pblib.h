@@ -15,7 +15,6 @@ namespace PixelBattle
     void UnloadAssets(void);
     void LoadStartMenu(void);
     char *GetAssetsPath(void);
-    int MemoryCopy(void *, unsigned long int, const void *);
 
     struct Object
     {
