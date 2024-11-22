@@ -4,7 +4,7 @@ namespace PixelBattle
 {
     extern Sound *button_click_effect;
 
-    void Clean(void)
+    void UnloadAssets(void)
     {
         using namespace StartMenu;
 

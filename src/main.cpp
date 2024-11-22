@@ -63,7 +63,7 @@ int main(int argc, const char *argv[])
 
     delete[] assets_path;
 
-    Clean();
+    UnloadAssets();
 
     CloseAudioDevice();
     CloseWindow();
