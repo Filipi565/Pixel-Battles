@@ -7,16 +7,23 @@ namespace PixelBattle
 {
     namespace StartMenu
     {
+        Texture2D bird_sprite[3];
         Button *settings_button;
         Button *extras_button;
         Texture2D background;
         Button *play_button;
         Sound bg_music;
 
+        #pragma region Sprites
+        static Image *bird_sprite_images;
+        #pragma endregion
+
+        #pragma region Images
         static Image *background_image;
         static Image *settings_image;
         static Image *extras_image;
         static Image *play_image;
+        #pragma endregion
     }
 
     bool is_assets_loaded = false;
@@ -103,6 +110,24 @@ namespace PixelBattle
 
             return LoadImage(result.data());
         }
+
+        static Image *LoadBirdSprite(void)
+        {
+            Image *frames = new Image[3]; // 3 frames
+
+            string result = assets;
+            result += "/sprites/bird/";
+
+            string frame1_p = result + "0.png";
+            string frame2_p = result + "1.png";
+            string frame3_p = result + "2.png";
+
+            frames[0] = LoadImage(frame1_p.data());
+            frames[1] = LoadImage(frame2_p.data());
+            frames[2] = LoadImage(frame3_p.data());
+
+            return frames;
+        }
     }
 
     void LoadAssets(void)
@@ -116,6 +141,8 @@ namespace PixelBattle
         extras_image = new Image(LoadExtrasButton());
         play_image = new Image(LoadPlayButton());
 
+        bird_sprite_images = LoadBirdSprite();
+
         is_assets_loaded = true;
     }
 
@@ -127,6 +154,12 @@ namespace PixelBattle
         extras_button->texture = LoadTextureFromImage(*extras_image);
         play_button->texture = LoadTextureFromImage(*play_image);
 
+        for (int i = 0; i < 3; i++)
+        {
+            bird_sprite[i] = LoadTextureFromImage(bird_sprite_images[i]);
+        }
+
+        delete[] bird_sprite_images;
         delete background_image;
         delete settings_image;
         delete extras_image;

@@ -77,6 +77,7 @@ namespace PixelBattle
     
     namespace StartMenu
     {
+        extern Texture2D bird_sprite[];
         extern Button *settings_button;
         extern Button *extras_button;
         extern Texture2D background;
