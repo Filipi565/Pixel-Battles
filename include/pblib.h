@@ -58,7 +58,7 @@ namespace PixelBattle
         unsigned long int frames_count;
         Texture2D *frames;
 
-        private:
+        protected:
         Vector2 size;
     };
 
