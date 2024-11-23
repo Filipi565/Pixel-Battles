@@ -30,8 +30,6 @@ namespace PixelBattle
         {
             if (frames >= 120)
             {
-                frames = 0;
-
                 PlaySound(sound);
             }
             else
