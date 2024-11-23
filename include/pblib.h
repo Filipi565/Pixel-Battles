@@ -81,7 +81,7 @@ namespace PixelBattle
         extern Button *extras_button;
         extern Texture2D background;
         extern Button *play_button;
-        extern Sound sound;
+        extern Sound bg_music;
     }
 }
 

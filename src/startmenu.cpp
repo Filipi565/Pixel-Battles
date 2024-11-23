@@ -26,11 +26,11 @@ namespace PixelBattle
         extras_button->Update();
         play_button->Update();
 
-        if (!IsSoundPlaying(sound))
+        if (!IsSoundPlaying(bg_music))
         {
             if (frames >= 120)
             {
-                PlaySound(sound);
+                PlaySound(bg_music);
             }
             else
             {
