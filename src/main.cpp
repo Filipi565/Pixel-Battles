@@ -28,8 +28,9 @@ int Application::Run(int &argc, const char *argv[])
 {
     if (argc >= 2)
     {
-        if (argv[1] != string("--hide-console=off"))
+        if (argv[1] != string("--hide-console=off")) {
             HideConsole();
+        }
     }
 
     InitWindow(0, 0, "Pixel Battle");
