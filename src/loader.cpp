@@ -11,7 +11,7 @@ namespace PixelBattle
         Button *extras_button;
         Texture2D background;
         Button *play_button;
-        Music sound;
+        Sound sound;
 
         static Image *background_image;
         static Image *settings_image;
@@ -57,8 +57,7 @@ namespace PixelBattle
             string result = assets;
             result += "/sounds/StartMenu.mp3";
 
-            sound = LoadMusicStream(result.data());
-            sound.looping = true;
+            sound = LoadSound(result.data());
         }
 
         static Image LoadBackgound(void)
