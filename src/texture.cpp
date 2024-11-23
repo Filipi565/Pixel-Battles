@@ -2,24 +2,11 @@
 
 namespace PixelBattle
 {
-    TextureObject::TextureObject()
-    {
-        texture = new Texture2D();
-    }
-
     TextureObject::~TextureObject()
     {
-        if (texture == nullptr)
+        if (IsTextureValid(texture))
         {
-            return;
+            UnloadTexture(texture);
         }
-
-        if (IsTextureValid(*texture))
-        {
-            UnloadTexture(*texture);
-        }
-        delete texture;
-
-        texture = nullptr;
     }
 }

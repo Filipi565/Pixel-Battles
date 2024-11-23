@@ -124,9 +124,9 @@ namespace PixelBattle
     {
         using namespace Loader;
         background = LoadTextureFromImage(*background_image);
-        (*settings_button->texture) = LoadTextureFromImage(*settings_image);
-        (*extras_button->texture) = LoadTextureFromImage(*extras_image);
-        (*play_button->texture) = LoadTextureFromImage(*play_image);
+        settings_button->texture = LoadTextureFromImage(*settings_image);
+        extras_button->texture = LoadTextureFromImage(*extras_image);
+        play_button->texture = LoadTextureFromImage(*play_image);
 
         delete background_image;
         delete settings_image;

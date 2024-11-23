@@ -30,10 +30,10 @@ namespace PixelBattle
             PlaySound(button_click_effect);
         }
 
-        Rectangle source = {0, 0, (float)texture->width, (float)texture->height};
-        if (visible && texture != nullptr)
+        Rectangle source = {0, 0, (float)texture.width, (float)texture.height};
+        if (visible && IsTextureValid(texture))
         {
-            DrawTexturePro(*texture, source, rec, {0, 0}, 0, color);
+            DrawTexturePro(texture, source, rec, {0, 0}, 0, color);
         }
         else if (visible)
         {

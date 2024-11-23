@@ -26,11 +26,11 @@ namespace PixelBattle
     class TextureObject: public Object
     {
         public:
-        TextureObject();
+        TextureObject() = default;
 
         virtual ~TextureObject();
 
-        Texture2D *texture;
+        Texture2D texture;
     };
 
     class Entity: public Object
