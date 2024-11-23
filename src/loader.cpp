@@ -19,7 +19,7 @@ namespace PixelBattle
         static Image *play_image;
     }
 
-    bool is_game_loaded = false;
+    bool is_assets_loaded = false;
     Sound button_click_effect;
 
     namespace Loader
@@ -117,7 +117,7 @@ namespace PixelBattle
         extras_image = new Image(LoadExtrasButton());
         play_image = new Image(LoadPlayButton());
 
-        is_game_loaded = true;
+        is_assets_loaded = true;
     }
 
     void LoadTextures(void)

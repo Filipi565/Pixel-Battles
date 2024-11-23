@@ -6,7 +6,7 @@ namespace PixelBattle
 {
     const char *executable = nullptr;
     const char *assets = nullptr;
-    extern bool is_game_loaded;
+    extern bool is_assets_loaded;
     bool on_start_menu = true;
 }
 
@@ -61,7 +61,7 @@ int Application::Run(int &argc, const char *argv[])
     // Load all Assets
     std::thread _loader = std::thread(LoadAssets);
 
-    while (!is_game_loaded)
+    while (!is_assets_loaded)
     {
         BeginDrawing();
         ClearBackground(BLACK);
