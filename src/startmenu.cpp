@@ -39,5 +39,7 @@ namespace PixelBattle
                 frames++;
             }
         }
+
+        UpdateMusicStream(sound);
     }
 }
